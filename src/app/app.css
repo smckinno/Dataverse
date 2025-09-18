@@ -9,3 +9,112 @@ body,
   --pf-v6-c-content--blockquote--BorderLeftColor: var(--pf-t--global--color--nonstatus--purple--default); /* changes all <blockquote> left border color to the semantic token for non-status (purple) */
   --pf-v6-c-content--hr--BackgroundColor: var(--pf-t--global--color--nonstatus--yellow--default); /* changes a <hr> color to the semantic token for non-status (yellow) */
 }
+
+:root {
+  /* Selected tab underline color */
+  --pf-v6-c-tabs__item--m-current__link--after--BorderColor: #EE0000;
+  --pf-v6-c-tabs__link--after--BorderColor: #EE0000;
+}
+
+/* Ensure active tab underline uses red in case variables differ */
+.pf-v6-c-tabs__item.pf-m-current .pf-v6-c-tabs__link::after {
+  border-color: #EE0000;
+}
+
+/* Red Hat Display 24px helper for Dataverse intro */
+.rh-display-24 {
+  font-family: "Red Hat Display", "RedHatDisplay", var(--pf-t--global--font--family--text, RedHatText, "Red Hat Text", Inter, -apple-system, system-ui, sans-serif);
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+/* Utility: 24px margin-top */
+.mt-24px { margin-top: 24px; }
+.mb-24px { margin-bottom: 24px; }
+.pb-24px { padding-bottom: 24px; }
+.pb-48px { padding-bottom: 48px; }
+
+/* Dataverse cards */
+.dv-card {
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+  border: 1px solid #E0E0E0;
+  border-radius: 12px;
+}
+
+.dv-card__icon {
+  color: #EE0000;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.dv-card--selected {
+  border-color: #0066CC;
+  box-shadow: 0 0 0 2px rgba(0,102,204,0.15), 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* Utility: 96px vertical margin */
+.my-96px { margin-top: 96px; margin-bottom: 96px; }
+
+/* Compact cards */
+.dv-compact-card {
+  padding: 16px;
+  border: 1px solid #E0E0E0;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.dv-compact-card__icon {
+  color: #EE0000;
+  font-size: 28px;
+}
+
+/* Dataverse: increase body text size */
+.dv-body-text-20 p:not(.rh-display-24) {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.dv-body-text-20 .pf-v6-c-card__body {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* Equal-height cards within Dataverse grids */
+.dv-grid { align-items: stretch; }
+.dv-grid .pf-v6-c-card { height: 100%; display: flex; flex-direction: column; }
+.dv-grid .pf-v6-c-card__body { flex: 1 1 auto; }
+
+/* Lists and links styling for community section */
+.dv-list { padding-left: 1.25rem; font-size: 20px; line-height: 1.5; }
+.dv-list li { margin: 6px 0; font-size: 20px; line-height: 1.5; }
+.dv-links-list { padding-left: 1.25rem; }
+.dv-links-list li { margin: 4px 0; }
+.dv-link { color: #EE0000; text-decoration: none; }
+.dv-link:hover { text-decoration: underline; }
+
+/* Builder guide wide card */
+.dv-wide-card { padding: 24px; border: 1px solid #E0E0E0; border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+.dv-step { text-align: center; }
+.dv-step__icon { color: #EE0000; font-size: 48px; margin-bottom: 8px; line-height: 1; }
+.dv-footnote { margin-top: 6px; font-size: 12px; color: #6a6e73; }
+
+/* (Removed neon pink override—back to default PF primary styles) */
+
+/* Consumer guide placeholders */
+.dv-source-heading { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.dv-video-placeholder { background: #D9D9D9; height: 220px; border-radius: 4px; margin-top: 12px; }
+.dv-col-divider { position: relative; }
+.dv-col-divider::before { content: ""; position: absolute; left: -12px; top: 0; bottom: 0; width: 1px; background: #C7C7C7; display: none; }
+@media (min-width: 992px) { .dv-col-divider::before { display: block; } }
+
+/* Agent info cards */
+.dv-info-card { padding: 16px; border: 1px solid #E0E0E0; border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+.dv-info-card__icon { color: #EE0000; font-size: 28px; }
+
+/* Video modal tweaks */
+.dv-video-modal .pf-v6-c-modal__content { padding: 24px; }
+.dv-video-modal .pf-v6-c-button.pf-m-plain { right: 12px; }
+.dv-video-modal__frame { width: 80%; margin: 0 auto; }
+@media (max-width: 768px) { .dv-video-modal__frame { width: 100%; } }

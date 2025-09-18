@@ -1,5 +1,5 @@
 {
-  "name": "patternfly-seed",
+  "name": "dataverse-landing-page",
   "version": "0.0.2",
   "description": "An open source build scaffolding utility for web apps.",
   "repository": "https://github.com/patternfly/patternfly-react-seed.git",
@@ -20,6 +20,7 @@
     "type-check": "tsc --noEmit",
     "ci-checks": "npm run type-check && npm run lint && npm run test:coverage",
     "build:bundle-profile": "webpack --config webpack.prod.js --profile --json > stats.json",
+    "build:single": "npm run build && node scripts/inline-dist.js",
     "bundle-profile:analyze": "npm run build:bundle-profile && webpack-bundle-analyzer ./stats.json",
     "clean": "rimraf dist"
   },
